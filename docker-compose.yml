@@ -1,0 +1,21 @@
+services:
+  db2:
+    image: postgres:16
+    container_name: safeline-db2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: safeline2
+    ports:
+      - "5433:5432"
+    volumes:
+      - safeline_pg_data_2:/var/lib/postgresql/data
+    networks:
+      - safeline-network
+
+volumes:
+  safeline_pg_data_2:
+
+networks:
+  safeline-network:
+    driver: bridge
