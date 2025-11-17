@@ -31,7 +31,7 @@ public class Report {
     private String phone;
 
     @Column(nullable = false)
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime callDate;
 
     @Column(nullable = false)

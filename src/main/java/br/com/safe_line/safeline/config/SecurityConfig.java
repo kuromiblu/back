@@ -45,7 +45,8 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**",
                                 "/api/v1/auth/login",
-                                "/api/v1/user/create")
+                                "/api/v1/user/create",
+                                "/api/v1/report/create")
                         .permitAll()
                         // --- FIM DA CORREÇÃO ---
 

@@ -53,7 +53,8 @@ public class JwtFilter extends OncePerRequestFilter {
     // Lista de rotas que não exigem autenticação JWT
     // → qualquer rota que COMEÇA com essas strings será considerada pública
     private final List<String> publicPaths = List.of(
-            "api/v1/auth/",         // login, refresh, register
+            "api/v1/auth/",
+            "/api/v1/report/create",// login, refresh, register
             "/swagger-ui/",
             "/v3/api-docs/",  // documentação backend
             "/actuator/health"

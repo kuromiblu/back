@@ -1,6 +1,7 @@
 package br.com.safe_line.safeline.modules.report.controller;
 
 import br.com.safe_line.safeline.modules.report.dto.ReportRequestDTO;
+import br.com.safe_line.safeline.modules.report.dto.ReportResponseDTO;
 import br.com.safe_line.safeline.modules.report.service.ReportService;
 import br.com.safe_line.safeline.modules.response.BaseResponse;
 import lombok.AllArgsConstructor;
@@ -17,13 +18,13 @@ public class ReportController {
 
     private final ReportService reportService;
 
-    @PostMapping
-    public ResponseEntity<BaseResponse<ReportRequestDTO>> createReportController(@RequestBody ReportRequestDTO reportRequestDTO) {
+    @PostMapping("/create")
+    public ResponseEntity<BaseResponse<ReportResponseDTO>> createReportController(@RequestBody ReportRequestDTO reportRequestDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(reportService.createdReport(reportRequestDTO));
     }
 
     @GetMapping
-    public ResponseEntity<BaseResponse<Set<ReportRequestDTO>>> getReportController() {
+    public ResponseEntity<BaseResponse<Set<ReportResponseDTO>>> getReportController() {
         return ResponseEntity.status(HttpStatus.OK).body(reportService.getAllReport());
     }
 
